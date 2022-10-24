@@ -45,7 +45,7 @@ print("Anna has {0} apples and {1} peaches".format(3, 4))
 print("Anna has {apples} apples and {peaches} peaches".format(apples=3, peaches=4))
 
 #8*. With indicators of field size (5 chars for the first and 3 for the second)
-print("Anna has {a} apples and {p} peaches".format(a="_____", p="___"))
+print("Anna has {0:5} apples and {1:3} peaches".format(3, 4))
 
 #9. With f-strings and variables
 apples = 3
@@ -56,8 +56,8 @@ print(f"Anna has {apples} apples and {peaches} peaches")
 print("Anna has %s apples and %s peaches." % (apples, peaches))
 
 #11*. With variable substitutions by name (hint: by using dict)
-fruits = {'apples': 30, 'peaches': 40}
-print(f"Anna has {fruits['apples']} apples and {fruits['peaches']} peaches.")
+fruits = {'apples': apples, 'peaches': peaches}
+print("Anna has %(apples)s apples and %(peaches)s peaches." % fruits)
 
 #Comprehensions:
 #(1)
