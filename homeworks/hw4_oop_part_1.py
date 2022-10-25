@@ -5,13 +5,19 @@ class Vehicle:
         self.mileage = mileage
 
     def increase_speed(self):
-        print("Increasing speed")
+        print('Increasing speed')
 
     def break_speed(self):
-        print("Breaking speed")
+        print('Breaking speed')
 
     def mileage_info(self):
-        print("Mileage info")
+        print('Mileage info')
+
+
+sedan = Vehicle(180, 400000)
+sedan.increase_speed()
+print(f'Sedan speed is {sedan.max_speed}. Be carefully, it mileage is {sedan.mileage}')
+sedan.break_speed()
 
 
 # 2. Створіть дочірній клас Bus, який успадкує всі змінні та методи класу Vehicle і матиме власний метод seating_capacity
@@ -20,11 +26,18 @@ class Bus(Vehicle):
         super().__init__(max_speed, mileage)
 
     def seating_capacity(self, capacity):
-        print(f"Seating capacity is {capacity}")
+        print(f'Seating capacity is {capacity}')
+
+
+etalon = Bus(120,300000)
+etalon.mileage_info()
+print(etalon.mileage)
+etalon.seating_capacity(40)
 
 
 # 3. Визначте, від якого класу успадковується клас Bus (перевірте issubclass)
 print(issubclass(Bus, Vehicle))
+
 
 # 4. Створіть екземпляр Bus під назвою school_bus і визначте, чи є school_bus об'єктом класу Vehicle/Bus
 school_bus = Bus(120, 22000)
@@ -39,10 +52,10 @@ class School:
         self.number_of_students = number_of_students
 
     def school_address(self):
-        print("School address is 10, Nezalezhnosti, St")
+        print('School address is 10, Nezalezhnosti, St')
 
     def main_subject(self):
-        print("Main subject is Ukrainian language")
+        print('Main subject is Ukrainian language')
 
 
 # 6*. Створіть новий клас SchoolBus, який успадкує всі методи від School і Bus і матиме власний - bus_school_color
@@ -52,7 +65,7 @@ class SchoolBus(School, Bus):
         super().__init__(max_speed, mileage)
 
     def bus_school_color(self):
-        print("School bus color is yellow")
+        print('School bus color is yellow')
 
 
 s_bus = SchoolBus(7415, 600, 120, 22000)
@@ -84,16 +97,20 @@ for animals in animals:
 # Магічні методи:
 # Додатково: 8*. Створіть клас City з атрибутами екземпляра name i population, сторіть новий екземпляр цього класу, лише коли population > 1500,
 # інакше повертається повідомлення: "Your city is too small". Підказка: використовуєте для цього завдання магічні методи
+
+
 class City:
+
     def __new__(cls, name, population):
         if population > 1500:
             return super(City, cls).__new__(cls)
         else:
-            print("Your city is too small")
+            print('Your city is too small')
 
     def __init__(self, name, population):
         self.name = name
         self.population = population
+
 
 print('Try to create object "kharkiv" with population 900')
 kharkiv = City('Kharkiv', 900)
