@@ -100,22 +100,22 @@ class Laptop(ABC):
 class HPLaptop(Laptop):
 
     def screen(self):
-        pass
+        print("This is screen")
 
     def keyboard(self):
-        pass
+        print("This is keyboard")
 
     def touchpad(self):
-        pass
+        print("This is touchpad")
 
     def webcam(self):
-        pass
+        print("This is webcam")
 
     def ports(self):
-        pass
+        print("These are ports")
 
     def dynamics(self):
-        pass
+        print("These are dynamics")
 
 #
 # 5. Create an abstract class for the Car with the next methods: drive, stop, open_door, close_door, turn_on_light,
